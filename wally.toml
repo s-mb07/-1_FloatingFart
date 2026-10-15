@@ -1,0 +1,13 @@
+[package]
+name = "you/my-game"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+# Signal is vendored (ReplicatedStorage/Libraries/Signal.lua) and PadTrigger
+# has no external dependency -- Fusion (below) is the only hard Wally dep
+# this kit ships with. Check the Fusion repo/Wally listing before bumping
+# this pin; 0.3.0 is the latest stable release as of this kit's writing.
+Fusion = "elttob/fusion@0.3.0"
+TopbarPlus = "1foreverhd/topbarplus@3.4.0"

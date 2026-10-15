@@ -1,0 +1,20 @@
+# Wally packages -- restored by `wally install`, not source.
+# `wally.lock` is NOT ignored -- commit it, same reason you'd commit a
+# package-lock.json: it pins exact resolved versions for reproducible installs.
+/Packages/
+/ServerPackages/
+/DevPackages/
+
+# Rojo build artifacts
+*.rbxl
+*.rbxlx
+sourcemap.json
+globalTypes.d.luau
+
+# Rokit-managed tool binaries
+/.rokit/
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+docs/notes/

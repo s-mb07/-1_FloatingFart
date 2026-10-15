@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git log *)",
+      "Bash(git ls-remote *)"
+    ]
+  },
+  "worktree": {
+    "bgIsolation": "none"
+  }
+}

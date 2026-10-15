@@ -1,0 +1,14 @@
+# This file lists tools managed by Rokit, a toolchain manager for Roblox projects.
+# For more information, see https://github.com/rojo-rbx/rokit
+#
+# New tools can be added by running `rokit add <tool>` in a terminal.
+# At minimum you also want `rojo add rojo-rbx/rojo` for sync/build/serve.
+#
+# stylua + lune back scripts/lint-conventions.luau and scripts/hooks/pre-commit
+# (see README.md §1/§9.3) -- both are required for `lune run scripts/lint-conventions`
+# and the CI "Format check"/"Convention check" steps to run locally.
+
+[tools]
+selene = "Kampfkarren/selene@0.31.0"
+stylua = "JohnnyMorganz/StyLua@2.0.2"
+lune = "lune-org/lune@0.8.9"

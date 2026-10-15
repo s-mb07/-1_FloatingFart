@@ -1,0 +1,8 @@
+{
+	"luau-lsp.sourcemap.enabled": true,
+	"luau-lsp.sourcemap.autogenerate": true,
+	"luau-lsp.sourcemap.rojoProjectFile": "default.project.json",
+	"luau-lsp.types.definitionFiles": ["globalTypes.d.luau"],
+	"luau-lsp.require.mode": "relativeToWorkspaceRoot",
+	"luau-lsp.platform.type": "roblox"
+}

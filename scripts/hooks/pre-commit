@@ -1,0 +1,19 @@
+#!/bin/sh
+# Pre-commit hook -- enforce conventions before each commit.
+# Install: copy to .git/hooks/pre-commit and `chmod +x`. A copy lives in scripts/hooks/.
+set -e
+
+echo "[pre-commit] stylua --check src"
+stylua --check src
+
+echo "[pre-commit] selene src"
+selene generate-roblox-std >/dev/null 2>&1 || true
+selene src
+
+echo "[pre-commit] convention lint"
+lune run scripts/lint-conventions
+
+echo "[pre-commit] utils tests"
+lune run scripts/test-utils
+
+echo "[pre-commit] OK"

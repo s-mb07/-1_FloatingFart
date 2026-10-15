@@ -1,0 +1,55 @@
+{
+  "name": "MyGame",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedFirst": {
+      "$className": "ReplicatedFirst",
+      "$path": "src/ReplicatedFirst",
+      "$ignoreUnknownInstances": true
+    },
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "Libraries": {
+        "$path": "src/ReplicatedStorage/Libraries"
+      },
+      "Traps": {
+        "$path": "src/ReplicatedStorage/Traps"
+      },
+      "Config": {
+        "$path": "src/ReplicatedStorage/Config"
+      },
+      "Packages": {
+        "$path": "Packages"
+      }
+    },
+    "ServerScriptService": {
+      "$path": "src/ServerScriptService",
+      "$ignoreUnknownInstances": true
+    },
+    "StarterPlayer": {
+      "$properties": {
+        "EnableMouseLockOption": false
+      },
+      "StarterPlayerScripts": {
+        "$path": "src/StarterPlayerScripts",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "Workspace": {
+      "$ignoreUnknownInstances": true,
+      "$properties": {
+        "StreamingEnabled": true,
+        "StreamingMinRadius": 512,
+        "StreamingTargetRadius": 4096,
+        "StreamOutBehavior": "Opportunistic"
+      }
+    },
+    "Lighting": {
+      "$ignoreUnknownInstances": true
+    },
+    "SoundService": {
+      "$ignoreUnknownInstances": true
+    }
+  }
+}

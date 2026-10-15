@@ -1,0 +1,44 @@
+# Starter CI. Validate/adjust action versions at scaffold time (pin to latest stable).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rokit toolchain
+        uses: CompeyDev/setup-rokit@v0.1.2
+        with:
+          cache: true
+
+      - name: Install Wally packages
+        run: wally install
+
+      - name: Generate sourcemap
+        run: rojo sourcemap default.project.json --output sourcemap.json
+
+      - name: Format check (stylua)
+        run: stylua --check src
+
+      - name: Lint (selene)
+        run: |
+          selene generate-roblox-std
+          selene src
+
+      - name: Fetch Roblox type defs
+        run: curl -sL https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau -o globalTypes.d.luau
+
+      - name: Type analysis (luau-lsp)
+        run: luau-lsp analyze --platform roblox --sourcemap sourcemap.json --base-luaurc .luaurc --defs globalTypes.d.luau src
+
+      - name: Convention check (lune)
+        run: lune run scripts/lint-conventions
+
+      - name: Utils tests (lune)
+        run: lune run scripts/test-utils

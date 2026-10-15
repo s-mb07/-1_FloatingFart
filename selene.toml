@@ -1,0 +1,7 @@
+std = "roblox"
+
+exclude = [
+    "Packages/**",
+    "**/Packages/**",
+    "node_modules/**"
+]
